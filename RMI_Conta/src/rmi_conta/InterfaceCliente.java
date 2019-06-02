@@ -50,9 +50,6 @@ public class InterfaceCliente extends javax.swing.JFrame {
     modelo.addColumn("Endereço");
     modelo.addColumn("Saldo");
     
-
-//        for (Cliente a : listaCliente) {
-//            if(a.getNome().equalsIgnoreCase(this.txtConsultar.getText()))
                 modelo.addRow(new Object[]{
                     clienteTable.getNome(), clienteTable.getSenha(), clienteTable.getEndereco(), clienteTable.getSaldo()
                 });
@@ -176,7 +173,7 @@ public class InterfaceCliente extends javax.swing.JFrame {
 
         labelHeader.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         labelHeader.setForeground(new java.awt.Color(23, 81, 152));
-        labelHeader.setText("Consute sua conta");
+        labelHeader.setText("Consulte sua conta");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rmi_conta/imagem/logobanco.png"))); // NOI18N
 
@@ -185,7 +182,7 @@ public class InterfaceCliente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelHeader)
@@ -292,11 +289,6 @@ public class InterfaceCliente extends javax.swing.JFrame {
             
             clienteAtual = editCliente;
             criarTabela(servicos.consultarCadastro(clienteAtual.getNome()));
-//        try {
-//            servicos.alterarEnredeco(inputTxtConsulta.getText(), inputEditarEndereco.getText());
-//        } catch (RemoteException ex) {
-//            JOptionPane.showMessageDialog(null, ex.getMessage());
-//        }
         } catch (RemoteException ex) {
             Logger.getLogger(InterfaceCliente.class.getName()).log(Level.SEVERE, null, ex);
         }

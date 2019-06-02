@@ -22,7 +22,6 @@ import javax.swing.JOptionPane;
 public class Servidor extends UnicastRemoteObject implements ServicosConta{
     ClienteController cc = new ClienteController();
     
-    //static ArrayList<Cliente> listaCliente = new ArrayList<>();
     public Servidor() throws RemoteException{
         super();
     }
@@ -67,16 +66,6 @@ public class Servidor extends UnicastRemoteObject implements ServicosConta{
         int edicao = 0;
         try {
             edicao = cc.editar(cliente);
-//        for(int i=0; i<this.listaCliente.size(); i++){
-//            Cliente a = this.listaCliente.get(i);
-//            if(a.getNome().equalsIgnoreCase(nome)){
-//                a.setEndereco(novo);
-//                JOptionPane.showMessageDialog(null, "Endereco trocado com sucesso !");
-//            }
-//            else{
-//                JOptionPane.showMessageDialog(null, "Usuario não encontrado");
-//            }
-//        }
         } catch (SQLException ex) {
             Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -103,20 +92,5 @@ public class Servidor extends UnicastRemoteObject implements ServicosConta{
         else{
             JOptionPane.showMessageDialog(null,"Transção recusada, saldo insuficiente");
         }
-            
-//        for(int i=0; i<listaCliente.size(); i++){
-//            Cliente a = listaCliente.get(i);
-//            if(a.getNome().equalsIgnoreCase(nome)){
-//                if (a.getSaldo() >= valor){
-//                    System.out.println("Transação aceita");
-//                }
-//                else{
-//                    System.out.println("Transção recusada, saldo insuficiente");
-//                }
-//            }
-//            else{
-//                System.out.println("Usuario não encontrado");
-//            }
-//        }
     }
 }
